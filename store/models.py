@@ -24,3 +24,11 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+class certificate(models.Model):
+    name = models.CharField(max_length=200, null=True, blank=True)
+    image = models.ImageField()
+    link = models.URLField(max_length=250, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
