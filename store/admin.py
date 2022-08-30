@@ -3,4 +3,4 @@ from .models import *
 
 admin.site.register(Project)
 admin.site.register(Tag)
-admin.site.register(certificate)
+admin.site.register(Certificate)

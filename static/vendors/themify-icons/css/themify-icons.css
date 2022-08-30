@@ -412,6 +412,7 @@
 }
 .ti-printer:before {
 	content: "\e681";
+	color: white;
 }
 .ti-power-off:before {
 	content: "\e682";
