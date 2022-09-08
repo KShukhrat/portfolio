@@ -37,3 +37,13 @@ class Certificate(models.Model):
             return self.image.url
         except:
             pass
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    number = models.IntegerField(blank=True, null=True)
+    subject = models.TextField()
+
+    def __str__(self):
+        return self.name
+
