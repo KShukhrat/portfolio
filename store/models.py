@@ -46,3 +46,8 @@ class Contact(models.Model):
     def __str__(self):
         return self.email
 
+class Resume(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
+    file = models.FileField()
+    def __str__(self):
+        return self.name
