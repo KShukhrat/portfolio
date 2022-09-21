@@ -1,20 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import *
+from .forms import ContactForm
 from django.http import HttpResponse
 def index(request):
     cer = Certificate.objects.all()
     project = Project.objects.all()
-    context = {'certificate': cer, 'project': project}
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Habar junatildi')
+    context = {'certificate': cer, 'project': project, 'form': form}
     return render(request, 'index.html', context)
 
 def components(request):
     return render(request, 'components.html')
-
-def contact(request):
-    if request.method == 'POST':
-        name = request.POST['name']
-        email = request.POST['email']
-        number = request.POST['number']
-        subject = request.POST['subject']
-        Contact.objects.create(name=name, email=email, number=number, subject=subject)
-        return HttpResponse('muvofiqiyatli amlga oshirildi!!!')
