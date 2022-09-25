@@ -302,21 +302,20 @@
 
                         <form action="" class="form" method="POST">
                         {% csrf_token %}
-                            {{ form.as_p }}
-{#                            <div class="form-group">#}
-{#                                <input  class="form-control" type="text" name="name" placeholder="Name *" required>#}
-{#                            </div>#}
-{#                            <div class="form-group">#}
-{#                                <input class="form-control" type="email" name="email" placeholder="Email *" required>#}
-{#                            </div>#}
-{#                            <div class="form-group">#}
-{#                                <input class="form-control" type="" name="number"  placeholder="Phone number *" required>#}
-{#                            </div>#}
-{#                            <div class="form-group">#}
-{#                                <textarea class="form-control" name="subject" id="" placeholder="Message *" rows="7" required></textarea>#}
-{#                            </div>#}
+                            <div class="form-group">
+                                <input  class="form-control" type="text" name="name" placeholder="Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="email" name="email" placeholder="Email *" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="" name="number"  placeholder="Phone number *" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="subject" id="" placeholder="Message *" rows="7" required></textarea>
+                            </div>
                             <div class="form-group ">
-                                <input type="submit" class="form-control btn btn-primary" >Send Message</input>
+                                <button type="submit" class="form-control btn btn-primary">Send Message</button>
                             </div>
                         </form>
                     </div>

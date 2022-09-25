@@ -11,9 +11,12 @@ def index(request):
     form = ContactForm()
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponse('Habar junatildi')
+        name = request.POST['name']
+        email = request.POST['email']
+        number = request.POST['number']
+        subject = request.POST['subject']
+        Contact.objects.create(name=name, email=email, number=number, subject=subject)
+        return HttpResponse('Habar junatildi')
     context = {'certificate': cer, 'project': project, 'form': form, 'resume': resume}
     return render(request, 'index.html', context)
 
