@@ -21,4 +21,6 @@ def index(request):
     return render(request, 'index.html', context)
 
 def components(request):
-    return render(request, 'components.html')
+    message = Contact.objects.all()
+    context = {'message': message}
+    return render(request, 'components.html', context)
