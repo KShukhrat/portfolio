@@ -5,3 +5,4 @@ urlpatterns = [
     path('', index, name='index'),
     path('components/', components, name='components'),
 ]
+

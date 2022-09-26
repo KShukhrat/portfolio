@@ -6,15 +6,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta name="description" content="Start your development with JohnDoe landing page.">
    <meta name="author" content="Devcrud">
-   <title>JohnDoe Landing page | Components</title>
-   <link rel="icon" href="{% static 'imgs/favicon.png' %}" type="image/png">
-   <!-- font icons -->
    <link rel="stylesheet" href="{% static 'vendors/themify-icons/css/themify-icons.css' %}">
    <!-- Bootstrap + Steller  -->
    <link rel="stylesheet" href="{% static 'css/johndoe.css' %}">
 </head>
 <body>
-
       <h6 class="section-secondary-title mt-5">Messages :</h6>
       <table class="table table-striped">
          <thead>
@@ -26,14 +22,14 @@
             </tr>
          </thead>
          <tbody>
-         {% for cat in message %}
-            <tr>
-               <td>{{ cat.name }}</td>
-               <td>{{ cat.email }}</td>
-               <td>{{ cat.number }}</td>
-               <td>{{ cat.subject }}</td>
-            </tr>
-         {% endfor %}
+             {% for cat in message %}
+                <tr>
+                   <td>{{ cat.name }}</td>
+                   <td>{{ cat.email }}</td>
+                   <td>{{ cat.number }}</td>
+                   <td>{{ cat.subject }}</td>
+                </tr>
+             {% endfor %}
          </tbody>
       </table>
 

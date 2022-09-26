@@ -26,7 +26,7 @@ class Project(models.Model):
 
 class Certificate(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='Upload')
     link = models.URLField(max_length=250, null=True, blank=True)
 
     def __str__(self):
