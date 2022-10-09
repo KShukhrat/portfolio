@@ -12,7 +12,8 @@ class Tag(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
-    image = models.ImageField(null=True, blank=True, default='..imgs/default -image.jpg')
+    image = models.ImageField(null=True, blank=True, default='.imgs/default -image.jpg')
+    image_link = models.URLField(max_length=150, null=True, blank=True)
     tags = models.ManyToManyField('Tag', blank=True)
     demo_link = models.CharField(max_length=2000, null=True, blank=True)
     source_link = models.CharField(max_length=2000, null=True, blank=True)
@@ -26,7 +27,7 @@ class Project(models.Model):
 
 class Certificate(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to='Upload')
+    image = models.ImageField(upload_to='Upload', null=True, blank=True)
     link = models.URLField(max_length=250, null=True, blank=True)
 
     def __str__(self):
