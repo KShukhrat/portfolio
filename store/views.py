@@ -16,7 +16,7 @@ def index(request):
         number = request.POST['number']
         subject = request.POST['subject']
         Contact.objects.create(name=name, email=email, number=number, subject=subject)
-        return HttpResponse('Habar junatildi')
+        return redirect('/')
     context = {'certificate': cer, 'project': project, 'form': form, 'resume': resume}
     return render(request, 'index.html', context)
 
